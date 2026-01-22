@@ -24,6 +24,8 @@ You also need to make sure that tmux supports 24-bit colors and that it knows
 that the client terminal supports 24-bit colors (you may need to install the st
 terminfo entry on all systems that you use, including remote ones).
 
+Reminder: When connecting over SSH within a `tmux` session, remember to set `TERM=1`. Otherwise, snacks will not render images.
+
 ## Installation
 
 As usual, copy `config.def.h` to `config.h`, modify it according to your needs,
