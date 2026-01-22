@@ -102,6 +102,9 @@ void hbtransform(HbTransformData *data, XftFont *xfont, const Glyph *glyphs, int
 		mode = glyphs[glyph_idx].mode;
 		if (mode & ATTR_WDUMMY)
 			hbrunebuffer.runes[rune_idx] = 0x0020;
+		/* Draw spaces for image placeholders. */
+		if (mode & ATTR_IMAGE)
+			hbrunebuffer.runes[rune_idx] = 0x0020;
 	}
 	hb_buffer_add_codepoints(buffer, hbrunebuffer.runes, length, 0, length);
 
